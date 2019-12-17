@@ -34,4 +34,11 @@
       width: 100%;
       max-width: 900px;
       height: 200px;
+      position: absolute;
+      bottom:-80px;
+   }
+
+   canvas{
+      border: solid black 1px;
+      background-color: grey;
    }
