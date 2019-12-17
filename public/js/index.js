@@ -1,3 +1,6 @@
+const testArr=[];
+
+
 
  function setup() {
   let cnv = createCanvas(640, 480);
@@ -9,8 +12,21 @@
 
 function draw() {
   if (mouseIsPressed) {
+   test();
       fill(0);
     line(mouseX, mouseY, pmouseX, pmouseY);
   } 
   
+}
+
+
+$("#test").on("click", function(){
+  const uniqueSet = new Set(testArr);
+  const backToArr=[...uniqueSet];
+  console.log(backToArr);
+})
+
+
+const test=()=>{
+  testArr.push(mouseX + ":" +mouseY);
 }
