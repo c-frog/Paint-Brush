@@ -1,5 +1,10 @@
 let testArr = [];
 let i = 2;
+let record = false;
+
+const test = () => {
+  testArr.push(mouseX, mouseY);
+};
 
 function setup() {
   let cnv = createCanvas(640, 480);
@@ -8,10 +13,13 @@ function setup() {
   cnv.position(x, y);
   $("#defaultCanvas0")
     .mousedown(function() {
+      if (record === true) {
       timer = setInterval(test, 5);
+      }
     })
     .mouseup(function() {
       clearInterval(timer);
+      record = false;
     });
 }
 
@@ -38,18 +46,17 @@ $("#go").on("click", function() {
   timeloop();
 });
 
-$("#noArr").on("click", function() {
-  testArr = [];
-});
-
 $("#clean").on("click", function() {
   i = 2;
   clear();
 });
-$("#printArr").on("click", function() {
-  console.log(testArr);
-});
 
-const test = () => {
-  testArr.push(mouseX, mouseY);
-};
+$("#rec").on("click", function() {
+  testArr=[];
+  i=2;
+  clear();
+  let name = prompt("How would you like to name this recording?");
+  alert("Please start drawing. The recording will be saved under the name " + name +". Once you have finished, you can view your recording by pressing the 'execute' button." )
+  record = true;
+})
+
