@@ -60,3 +60,17 @@ $("#rec").on("click", function() {
   record = true;
 })
 
+$("#save").on("click", function(event) {
+  // Make sure to preventDefault on a submit event.
+  event.preventDefault();
+  
+    $.ajax({
+      method: "POST",
+      url: "/save", 
+      data: {
+        name:name,
+        coordinates: testArr
+      }
+    })
+});
+
