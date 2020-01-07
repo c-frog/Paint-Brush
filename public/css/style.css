@@ -1,44 +1,49 @@
+#doodleBG {
+  background-image: url(assets/class_doodles_by_katmcgeer_d1lug6h-pre.jpg);
+  width: auto;
+  height: auto;
+  background-position: center center;
+}
 .wrapper {
-   max-width: 900px;
-   margin: auto;
-   font-family: "Arial"
+  max-width: 900px;
+  margin: auto;
+  font-family: "Arial";
 }
 
-.toolbar{
-   width: 100%;
-   background-color: #444;
-   overflow: auto;
+.toolbar {
+  width: 100%;
+  background-color: #444;
+  overflow: auto;
 }
-   .toolbar a {
-      float: left;
-      width: 11%;
-      text-align: center;
-      padding: 6px 5px;
-      transition: all 0.5s ease;
-   }
+.toolbar a {
+  float: left;
+  width: 11%;
+  text-align: center;
+  padding: 6px 5px;
+  transition: all 0.5s ease;
+}
 
-   .toolbar a:hover {
-      background-color: #000;
-   }
+.toolbar a:hover {
+  background-color: #000;
+}
 
-   .selected {
-      background-color: #000;
-   }
+.selected {
+  background-color: #000;
+}
 
-   #draw{
-      width: 100%;
-      border: 3px solid black;
-   }
+#draw {
+  width: 100%;
+  border: 3px solid black;
+}
+#img-data-div {
+  width: 100%;
+  max-width: 900px;
+  height: 200px;
+  position: absolute;
+  bottom: -80px;
+}
 
-   #img-data-div {
-      width: 100%;
-      max-width: 900px;
-      height: 200px;
-      position: absolute;
-      bottom:-80px;
-   }
-
-   canvas{
-      border: solid black 1px;
-      background-color: grey;
-   }
+canvas {
+  border: solid black 1px;
+  background-color: grey;
+}
