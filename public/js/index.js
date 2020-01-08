@@ -8,13 +8,13 @@ const test = () => {
 
 function setup() {
   let cnv = createCanvas(640, 480);
-  let x = (windowWidth - width) / 2;
+  let x = 420;
   let y = (windowHeight - height) / 2;
   cnv.position(x, y);
   $("#defaultCanvas0")
     .mousedown(function() {
       if (record === true) {
-      timer = setInterval(test, 5);
+        timer = setInterval(test, 5);
       }
     })
     .mouseup(function() {
@@ -52,25 +52,28 @@ $("#clean").on("click", function() {
 });
 
 $("#rec").on("click", function() {
-  testArr=[];
-  i=2;
+  testArr = [];
+  i = 2;
   clear();
   let name = prompt("How would you like to name this recording?");
-  alert("Please start drawing. The recording will be saved under the name " + name +". Once you have finished, you can view your recording by pressing the 'execute' button." )
+  alert(
+    "Please start drawing. The recording will be saved under the name " +
+      name +
+      ". Once you have finished, you can view your recording by pressing the 'execute' button."
+  );
   record = true;
-})
+});
 
 $("#save").on("click", function(event) {
   // Make sure to preventDefault on a submit event.
   event.preventDefault();
-  
-    $.ajax({
-      method: "POST",
-      url: "/save", 
-      data: {
-        name:name,
-        coordinates: testArr
-      }
-    })
-});
 
+  $.ajax({
+    method: "POST",
+    url: "/save",
+    data: {
+      name: name,
+      coordinates: testArr
+    }
+  });
+});
