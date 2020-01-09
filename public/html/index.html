@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="../css/style.css" />
   <title>Flint’z Skinz</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body id="doodleBG">
@@ -19,12 +19,12 @@
   </nav>
 
   <!-- tool bar -->
-  <div id="set1" class="row">
+  <!-- <div id="set1" class="row">
     <div class="col">
       <div class="toolbar">
         <button class="btn yellow accent-3" id="test"> SAVE</button>
         <button class="btn blue darken-4"> BRUSH</button>
-        <button class="btn disabled">LOAD</button>
+        <button class="btn " id="modalOpen">LOAD</button>
         <button class="btn-small blue darken-4" id="clean">Clear Canvas</button>
       </div>
     </div>
@@ -54,7 +54,7 @@
          </div>
       </div> -->
   <!-- color selection -->
-  <div class="col"></div>
+  <!-- <div class="col"></div> --> -->
 
 
 
@@ -63,10 +63,18 @@
   <button class="toolBtn" id="rec">Record</button>
   <button class="toolBtn" id="executeBtn">Play</button>
   <button class="toolBtn" id="saveImage">Save</button class="toolBtn">
-  <button class="toolBtn">Load</button class="toolBtn">
+  <button class="toolBtn" id="modalOpen">Load</button class="toolBtn">
   <button class="toolBtn">Download</button class="toolBtn">
 </div>
 
+<div id="myModal" class="modal">
+
+  
+  <div class="modal-stuff">
+    <span class="close">&times;</span>
+  </div>
+
+</div>
 
 <div id="colorTray">
       <div class="colorTag" id="red" style="background: red;"></div>
