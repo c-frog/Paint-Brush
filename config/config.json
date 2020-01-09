@@ -1,7 +1,9 @@
 {
   "development": {
     "username": "root",
+
     "password": null,
+
     "database": "images_db",
     "host": "localhost",
     "dialect": "mysql"
