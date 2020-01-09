@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "clydefrog",
+    "database": "images_db",
     "host": "localhost",
     "dialect": "mysql"
   },
