@@ -143,7 +143,10 @@ $("#modalOpen").on("click", function(ev) {
   }).then(function(res) {
     console.log(res);
     for (let i = 0; i< res.length; i++) {
-      console.log(res[i].name);
+      let loadBtn = $("<button>");
+      loadBtn.text(res[i].name);
+      loadBtn.attr("class", "toolBtn");
+      $("#loadBtns").append(loadBtn);
     }
   })
 
