@@ -17,51 +17,20 @@
       <a href="#" class="brand-logo center-align">Flint’z Skinz</a>
     </div>
   </nav>
+
+
   <!-- tool bar -->
-  <div id="set1" class="row">
-    <div class="col">
-      <div class="toolbar">
-        <button class="btn yellow accent-3" id="test"> SAVE</button>
-        <button class="btn blue darken-4"> BRUSH</button>
-        <button class="btn disabled">LOAD</button>
-        <button class="btn-small blue darken-4" id="clean">Clear Canvas</button>
-      </div>
-    </div>
-    <div id="set2" class="row">
-      <div class="col">
-        <button class="btn-small blue darken-4" id="go">Execute</button>
-        <button class="btn-small blue darken-4" id="rec">Record a Video</button>
-        <button class="btn-small blue darken-4" id="save">Save Recording</button>
-      </div>
-    </div>
-    <div id="set3" class="row">
-      <div class="col">
-        <div id="img-data-div">
-          <button class="btn-small light-green accent-2" href="#" id="img-file" download="image.png">Download
-            Image</button>
-          <button class="btn-small light-green accent-2" href="#" id="img-saveNewNew" onclick="saveNewUserImg()">Save
-            New Image</button class="btn light-green accent-2">
-        </div>
-      </div>
-    </div>
 
-  </div>
-  <!-- <div class="container">
-</div> -->
-  <!-- download and save -->
-  <!-- <div class="row">
-      <div class="col s3">
-         </div>
-      </div> -->
-  <!-- color selection -->
-  <div class="col"></div>
+<div id="toolTray">
+  <button class="toolBtn" id="clean">Clear</button>
+  <button class="toolBtn" id="rec">Record</button>
+  <button class="toolBtn" id="executeBtn">Play</button>
+  <button class="toolBtn" id="saveImage">Save</button class="toolBtn">
+  <button class="toolBtn">Load</button class="toolBtn">
+  <button class="toolBtn">Download</button class="toolBtn">
+</div>
 
 
-
-
-
-
-  <!--  -->
 <div id="colorTray">
       <div class="colorTag" id="red" style="background: red;"></div>
       <div class="colorTag" id="orange" style="background: orange;"></div>
@@ -71,6 +40,8 @@
       <div class="colorTag" id="purple" style="background: purple;"></div>
       <div class="colorTag" id="black" style="background: black;"></div>
     </div>
+  <!-- <button class="btn-small blue darken-4" id="executeBtn">Execute</button> -->
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@0.10.2/lib/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -78,4 +49,3 @@
 </body>
 
 </html>
-
