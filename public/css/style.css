@@ -44,8 +44,11 @@
   bottom: -80px; */
 }
 
+
 canvas {
+  background: url("./assets/paper.png");
   border: solid black 1px;
+
   background-color: grey;
   margin-top: 50px;
 }
@@ -59,4 +62,27 @@ canvas {
 }
 #set3 {
   margin-top: 20px;
+
+}
+
+#colorTray {
+  position: absolute;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 6px;
+  left: 30%;
+  top: 12%;
+
+}
+
+.colorTag {
+  position: relative;
+  float: left;
+  border: rgba(0, 0, 0, .3) 6px solid;
+  border-radius: 50%;
+  margin: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 15px;
 }
