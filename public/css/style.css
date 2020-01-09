@@ -4,6 +4,7 @@
   height: auto;
   background-position: center center;
 }
+
 .wrapper {
   max-width: 900px;
   margin: auto;
@@ -36,6 +37,7 @@
   width: 100%;
   border: 3px solid black;
 }
+
 #img-data-div {
   width: 100%;
   max-width: 900px;
@@ -44,12 +46,9 @@
   bottom: -80px; */
 }
 
-
 canvas {
   background: url("./assets/paper.png");
   border: solid black 1px;
-
-  background-color: grey;
   margin-top: 50px;
 }
 #set1 {
@@ -62,27 +61,57 @@ canvas {
 }
 #set3 {
   margin-top: 20px;
-
 }
 
 #colorTray {
   position: absolute;
   padding-left: 50px;
   padding-right: 50px;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 6px;
-  left: 30%;
+  left: 32%;
   top: 12%;
-
 }
 
 .colorTag {
   position: relative;
   float: left;
-  border: rgba(0, 0, 0, .3) 6px solid;
+  border: rgba(0, 0, 0, 0.3) 6px solid;
   border-radius: 50%;
   margin: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 15px;
+}
+
+#toolTray {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 6px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+  right: -150px;
+  top: 180px;
+}
+
+.toolBtn {
+  width: 200px;
+  font-size: 26px;
+  background: #29b6f6;
+  color: white;
+  position: relative;
+  right: 60px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background: none;
+  text-align: center;
 }
