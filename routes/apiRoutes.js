@@ -3,21 +3,24 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all images
   app.get("/api/images", function(req, res) {
-    db.Images.findAll({}).then(function(dbImages) {
+    db.Image.findAll({}).then(function(dbImages) {
       res.json(dbImages);
     });
   });
 
   // Create a new image
   app.post("/api/images", function(req, res) {
-    db.Images.create(req.body).then(function(dbImages) {
+    //req.body.coordinates = JSON.stringify(req.body.coordinates); 
+    console.log(req.body);
+    db.Image.create(req.body).then(function(dbImages) {
+      
       res.json(dbImages);
     });
   });
   
   // Get a single image
   app.get("/api/images/:id", function(req, res) {
-    db.Post.findOne({
+    db.Image.findOne({
       where: {
         id: req.params.id
       }

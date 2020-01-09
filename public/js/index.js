@@ -2,6 +2,7 @@ let thing = 2;
 let record = false;
 let testArr = [];
 let colorChoice = "black";
+let name;
 
 const test = () => {
   testArr.push(mouseX, mouseY);
@@ -61,7 +62,7 @@ $("#rec").on("click", function() {
   testArr=[];
   thing=2;
   clear();
-  let name = prompt("How would you like to name this recording?");
+  name = prompt("How would you like to name this recording?");
   if(name.length === 0){alert("Image Name Required To Save. Please Try Again")}else{
   alert("Please start drawing. The recording will be saved under the name " + name +". Once you have finished, you can view your recording by pressing the 'execute' button." )
   record = true;}
@@ -74,9 +75,11 @@ $("#saveImage").on("click", function(event) {
   
     $.ajax({
       method: "POST",
+      url: "/api/images",
       data: {
         name: name,
-        coordinates: testArr
+        coordinates: JSON.stringify({array: testArr}),
+        color: colorChoice
       }
     })
 });
