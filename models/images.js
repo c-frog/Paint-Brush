@@ -9,10 +9,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     coordinates: {
       type: DataTypes.TEXT,
-      allowNull: false,
+      allowNull: true,
       validate: {
         len: [1]
       }
+    },
+    color: {
+      type: DataTypes.STRING,
+      allowNull: false,
     }
   });
   return Image;
