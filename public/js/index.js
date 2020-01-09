@@ -66,8 +66,10 @@ $("#saveImage").on("click", function(event) {
   
     $.ajax({
       method: "POST",
-      url: "/api/images", 
-      data: testArr
+      data: {
+        name: name,
+        coordinates: testArr
+      }
     })
 });
 
