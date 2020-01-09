@@ -34,7 +34,8 @@ function draw() {
   }
 }
 
-$("#go").on("click", function() {
+$("#executeBtn").on("click", function() {
+  console.log(testArr)
   function timeloop() {
     const c = document.getElementById("defaultCanvas0");
     const ctx = c.getContext("2d");
@@ -57,7 +58,6 @@ $("#clean").on("click", function() {
 });
 
 $("#rec").on("click", function() {
-
   testArr=[];
   thing=2;
   clear();
