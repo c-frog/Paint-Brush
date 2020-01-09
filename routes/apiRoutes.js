@@ -11,7 +11,6 @@ module.exports = function(app) {
   // Create a new image
   app.post("/api/images", function(req, res) {
     //req.body.coordinates = JSON.stringify(req.body.coordinates); 
-    console.log(req.body);
     db.Image.create(req.body).then(function(dbImages) {
       
       res.json(dbImages);
