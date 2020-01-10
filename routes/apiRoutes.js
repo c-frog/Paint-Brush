@@ -2,14 +2,14 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all images
-  app.get("/api/images", function(req, res) {
+  app.get("/api/images/", function(req, res) {
     db.Image.findAll({}).then(function(dbImages) {
       res.json(dbImages);
     });
   });
 
   // Create a new image
-  app.post("/api/images", function(req, res) {
+  app.post("/api/images/", function(req, res) {
     //req.body.coordinates = JSON.stringify(req.body.coordinates); 
     db.Image.create(req.body).then(function(dbImages) {
       
