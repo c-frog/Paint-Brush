@@ -170,6 +170,7 @@ $("#modalOpen").on("click", function(ev) {
       }
     })
   })
+})
   
   $(".colorTag").on("click", function(){
     let c = document.getElementById("defaultCanvas0");
