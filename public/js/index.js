@@ -36,12 +36,11 @@ function draw() {
 }
 
 $("#executeBtn").on("click", function() {
-  console.log(testArr)
   function timeloop() {
     const c = document.getElementById("defaultCanvas0");
     const ctx = c.getContext("2d");
-    ctx.strokeStyle = colorChoice;
     ctx.beginPath();
+    ctx.strokeStyle = colorChoice;
     ctx.moveTo(testArr[thing - 2], testArr[thing - 1]);
     thing += 2;
     ctx.lineTo(testArr[thing - 2], testArr[thing - 1]);
@@ -143,7 +142,6 @@ $("#modalOpen").on("click", function(ev) {
     url:"/api/images"
   }).then(function(res) {
     $("#loadBtns").html("");
-    //console.log(res);
     for (let i = 0; i< res.length; i++) {
       let loadBtn = $("<button>");
       let dataCoord = JSON.parse(res[i].coordinates);
@@ -156,9 +154,8 @@ $("#modalOpen").on("click", function(ev) {
     }
     $(".retBtn").on("click", function(){
       event.stopPropagation()
-      //console.log(event.target);
       testArr = [];
-      colorChoice = JSON.stringify(event.target.attributes[2].nodeValue);
+      colorChoice = event.target.attributes[2].nodeValue;
       let returnData = event.target.attributes[1].nodeValue
       console.log(colorChoice);
       let newArrOne = returnData.split(",");
