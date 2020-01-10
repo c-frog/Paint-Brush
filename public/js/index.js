@@ -75,7 +75,7 @@ $("#saveImage").on("click", function(event) {
   
     $.ajax({
       method: "POST",
-      url: "/api/images",
+      url: "/api/images/",
       data: {
         name: name,
         coordinates: JSON.stringify({array: testArr}),
@@ -139,7 +139,7 @@ $("#modalOpen").on("click", function(ev) {
   ev.preventDefault();
   $.ajax({
     method: "GET",
-    url:"/api/images"
+    url:"/api/images/"
   }).then(function(res) {
     $("#loadBtns").html("");
     for (let i = 0; i< res.length; i++) {
