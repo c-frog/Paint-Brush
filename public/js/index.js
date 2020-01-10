@@ -40,6 +40,7 @@ $("#executeBtn").on("click", function() {
   function timeloop() {
     const c = document.getElementById("defaultCanvas0");
     const ctx = c.getContext("2d");
+    ctx.strokeStyle = colorChoice;
     ctx.beginPath();
     ctx.moveTo(testArr[thing - 2], testArr[thing - 1]);
     thing += 2;
@@ -141,15 +142,32 @@ $("#modalOpen").on("click", function(ev) {
     method: "GET",
     url:"/api/images"
   }).then(function(res) {
-    console.log(res);
+    $("#loadBtns").html("");
+    //console.log(res);
     for (let i = 0; i< res.length; i++) {
       let loadBtn = $("<button>");
+      let dataCoord = JSON.parse(res[i].coordinates);
+      
       loadBtn.text(res[i].name);
-      loadBtn.attr("class", "toolBtn");
+      loadBtn.attr("class", "toolBtn retBtn");
+      loadBtn.attr("data-coord", dataCoord.array);
+      loadBtn.attr("data-color", res[i].color);
       $("#loadBtns").append(loadBtn);
     }
+    $(".retBtn").on("click", function(){
+      event.stopPropagation()
+      //console.log(event.target);
+      testArr = [];
+      colorChoice = JSON.stringify(event.target.attributes[2].nodeValue);
+      let returnData = event.target.attributes[1].nodeValue
+      console.log(colorChoice);
+      let newArrOne = returnData.split(",");
+      for (let j=0; j<newArrOne.length; j++) {
+        testArr.push(parseFloat(newArrOne[j]));
+      }
+    })
   })
-
+  
 
 
 })
