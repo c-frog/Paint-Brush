@@ -2,6 +2,7 @@ let thing = 2;
 let record = false;
 let testArr = [];
 let colorChoice = "black";
+let name;
 
 const test = () => {
   testArr.push(mouseX, mouseY);
@@ -34,7 +35,8 @@ function draw() {
   }
 }
 
-$("#go").on("click", function() {
+$("#executeBtn").on("click", function() {
+  console.log(testArr)
   function timeloop() {
     const c = document.getElementById("defaultCanvas0");
     const ctx = c.getContext("2d");
@@ -57,11 +59,10 @@ $("#clean").on("click", function() {
 });
 
 $("#rec").on("click", function() {
-
   testArr=[];
   thing=2;
   clear();
-  let name = prompt("How would you like to name this recording?");
+  name = prompt("How would you like to name this recording?");
   if(name.length === 0){alert("Image Name Required To Save. Please Try Again")}else{
   alert("Please start drawing. The recording will be saved under the name " + name +". Once you have finished, you can view your recording by pressing the 'execute' button." )
   record = true;}
@@ -74,8 +75,12 @@ $("#saveImage").on("click", function(event) {
   
     $.ajax({
       method: "POST",
-      url: "/api/images", 
-      data: testArr
+      url: "/api/images",
+      data: {
+        name: name,
+        coordinates: JSON.stringify({array: testArr}),
+        color: colorChoice
+      }
     })
 });
 
@@ -101,4 +106,54 @@ $(".colorTag").on("click", function(){
       ctx.strokeStyle = colorChoice;
     }}
 })
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("modalOpen");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+} 
+
+
+
+$("#modalOpen").on("click", function(ev) {
+  ev.preventDefault();
+  $.ajax({
+    method: "GET",
+    url:"/api/images"
+  }).then(function(res) {
+    console.log(res);
+    for (let i = 0; i< res.length; i++) {
+      let loadBtn = $("<button>");
+      loadBtn.text(res[i].name);
+      loadBtn.attr("class", "toolBtn");
+      $("#loadBtns").append(loadBtn);
+    }
+  })
+
+
+
+})
+
+
+
 
