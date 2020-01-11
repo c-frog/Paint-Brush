@@ -180,3 +180,78 @@ $("#modalOpen").on("click", function(ev) {
     })
   })
 })
+  
+  $(".colorTag").on("click", function(){
+    let c = document.getElementById("defaultCanvas0");
+    let ctx = c.getContext("2d");
+    colorChoice = $(this).attr("id");
+    let colorArr = ["red", "orange", "yellow", "green", "blue", "purple", "black"]
+    for(var i = 0; i < colorArr.length; i++){
+      if(colorArr[i] === colorChoice){
+        ctx.strokeStyle = colorChoice;
+      }}
+    })
+    
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("modalOpen");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    } 
+    
+    
+    
+    $("#modalOpen").on("click", function(ev) {
+      ev.preventDefault();
+      $.ajax({
+        method: "GET",
+        url:"/api/images"
+      }).then(function(res) {
+        $("#loadBtns").html("");
+        for (let i = 0; i< res.length; i++) {
+          let loadBtn = $("<button>");
+          let dataCoord = JSON.parse(res[i].coordinates);
+          
+          loadBtn.text(res[i].name);
+          loadBtn.attr("class", "toolBtn retBtn");
+          loadBtn.attr("data-coord", dataCoord.array);
+          loadBtn.attr("data-color", res[i].color);
+          $("#loadBtns").append(loadBtn);
+        }
+        $(".retBtn").on("click", function(){
+          event.stopPropagation()
+          testArr = [];
+          colorChoice = event.target.attributes[2].nodeValue;
+          let returnData = event.target.attributes[1].nodeValue
+          let newArrOne = returnData.split(",");
+          for (let j=0; j<newArrOne.length; j++) {
+            testArr.push(parseFloat(newArrOne[j]));
+          }
+        })
+      })
+
+    })
+
+    $("#testBack").on("click", function(event) {
+      event.preventDefault();
+      $("canvas").css("background", "url(https://source.unsplash.com/random)")
+    })
