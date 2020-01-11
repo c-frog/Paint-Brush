@@ -46,6 +46,11 @@ canvas {
   padding: 15px;
 }
 
+#saveImage {
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, .5);
+}
+
 #toolTray {
   position: relative;
   background: rgba(0, 0, 0, 0.5);
@@ -58,6 +63,7 @@ canvas {
   right: -150px;
   top: 120px;
 }
+
 
 .toolBtn {
   width: 200px;
@@ -79,10 +85,13 @@ button {
   text-align: center;
 }
 
+button:focus {
+  background: #29b6f6;
+}
+
 .page-footer {
   margin-top: 180px;
 }
-
 
  /* The Modal (background) */
  .modal {
@@ -109,6 +118,9 @@ button {
 
 /* The Close Button */
 .close {
+  z-index: 99;
+  position: relative;
+  top: 50%;
   color: #aaa;
   float: right;
   font-size: 28px;
@@ -122,3 +134,25 @@ button {
   cursor: pointer;
 } 
 
+#thumbnail {
+  position: relative;
+  top: 5%;
+  right: 0%;
+  width: 60%;
+  margin-left: 0%;
+  background: white;
+}
+
+#png{
+  position: relative;
+  color: white;
+  font-size: 2vw;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  margin-bottom: 5%;
+}
+
+#downloadModal{
+  position: relative;
+  text-align: center;
+}
