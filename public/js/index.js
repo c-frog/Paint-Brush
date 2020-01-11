@@ -241,3 +241,8 @@ $("#modalOpen").on("click", function(ev) {
       })
 
     })
+
+    $("#testBack").on("click", function(event) {
+      event.preventDefault();
+      $("canvas").css("background", "url(https://source.unsplash.com/random)")
+    })
