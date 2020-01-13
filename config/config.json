@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
 
-    "password": "clydefrog",
+    "password": "",
 
     "database": "images_db",
     "host": "localhost",

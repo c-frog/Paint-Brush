@@ -48,7 +48,7 @@ canvas {
 
 #saveImage {
   background: rgba(0, 0, 0, 0.5);
-  color: rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 #toolTray {
@@ -63,7 +63,6 @@ canvas {
   right: -150px;
   top: 120px;
 }
-
 
 .toolBtn {
   width: 200px;
@@ -93,8 +92,8 @@ button:focus {
   margin-top: 180px;
 }
 
- /* The Modal (background) */
- .modal {
+/* The Modal (background) */
+.modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -103,15 +102,15 @@ button:focus {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-stuff {
   background-color: #fefefe;
   margin: 15% auto; /*15% from the top and centered*/
-  padding:  100px;
+  padding: 100px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
@@ -132,7 +131,7 @@ button:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
-} 
+}
 
 #thumbnail {
   position: relative;
@@ -143,7 +142,7 @@ button:focus {
   background: white;
 }
 
-#png{
+#png {
   position: relative;
   color: white;
   font-size: 2vw;
@@ -152,7 +151,7 @@ button:focus {
   margin-bottom: 5%;
 }
 
-#downloadModal{
+#downloadModal {
   position: relative;
   text-align: center;
 }
