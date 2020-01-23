@@ -78,6 +78,7 @@ function qr() {
 //a recursive function (like a manual loop) that draws a line between inputed coordinates. The coordinates array is used. This function is currently set to fire 100 times/second, creating the illusion of a video.
 $("#executeBtn").on("click", function() {
   function timeloop() {
+    console.log(testArr);
     const c = document.getElementById("defaultCanvas0");
     const ctx = c.getContext("2d");
     ctx.beginPath();
