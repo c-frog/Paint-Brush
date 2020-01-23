@@ -7,6 +7,7 @@ const span = document.getElementsByClassName("close")[0];
 let recorded = false;
 let name;
 let cnv;
+let colorChoice;
 
 //a simple function that when fired pushes the mouse coordinates into an array
 const test = () => {
