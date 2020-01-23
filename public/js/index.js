@@ -185,8 +185,8 @@ $("#modalOpen").on("click", function(ev) {
   });
 });
 
-$(".retBtn").on("click", function() {
-  event.stopPropagation();
+$(document).on('click', '.retBtn', function() {
+event.stopPropagation();
   testArr = [];
   colorChoice = event.target.attributes[2].nodeValue;
   let returnData = event.target.attributes[1].nodeValue;
@@ -195,6 +195,9 @@ $(".retBtn").on("click", function() {
     testArr.push(parseFloat(newArrOne[j]));
   }
 });
+// $(".retBtn").on("click", function() {
+  
+// });
 
 //handles color selection for the line being drawn
 $(".colorTag").on("click", function() {
