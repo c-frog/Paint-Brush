@@ -181,17 +181,19 @@ $("#modalOpen").on("click", function(ev) {
       loadBtn.attr("data-color", res[i].color);
       $("#loadBtns").append(loadBtn);
     }
-    $(".retBtn").on("click", function() {
-      event.stopPropagation();
-      testArr = [];
-      colorChoice = event.target.attributes[2].nodeValue;
-      let returnData = event.target.attributes[1].nodeValue;
-      let newArrOne = returnData.split(",");
-      for (let j = 0; j < newArrOne.length; j++) {
-        testArr.push(parseFloat(newArrOne[j]));
-      }
-    });
+    
   });
+});
+
+$(".retBtn").on("click", function() {
+  event.stopPropagation();
+  testArr = [];
+  colorChoice = event.target.attributes[2].nodeValue;
+  let returnData = event.target.attributes[1].nodeValue;
+  let newArrOne = returnData.split(",");
+  for (let j = 0; j < newArrOne.length; j++) {
+    testArr.push(parseFloat(newArrOne[j]));
+  }
 });
 
 //handles color selection for the line being drawn
