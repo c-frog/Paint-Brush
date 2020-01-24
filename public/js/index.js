@@ -179,7 +179,7 @@ $("#modalOpen").on("click", function(ev) {
        let loadBtn = $("<button>");
       // let dataCoord = JSON.parse(res[i].coordinates);
        loadBtn.text(res[i].name);
-      // loadBtn.attr("class", "toolBtn retBtn");
+       loadBtn.attr("class", "toolBtn retBtn");
       // loadBtn.attr("data-coord", dataCoord.array);
        loadBtn.attr("data-color", res[i].color);
        $("#loadBtns").append(loadBtn);
