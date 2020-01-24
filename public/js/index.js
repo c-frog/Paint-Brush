@@ -7,6 +7,7 @@ const span = document.getElementsByClassName("close")[0];
 let recorded = false;
 let name;
 let cnv;
+let colorChoice;
 
 //a simple function that when fired pushes the mouse coordinates into an array
 const test = () => {
@@ -77,6 +78,7 @@ function qr() {
 //a recursive function (like a manual loop) that draws a line between inputed coordinates. The coordinates array is used. This function is currently set to fire 100 times/second, creating the illusion of a video.
 $("#executeBtn").on("click", function() {
   function timeloop() {
+    console.log(testArr);
     const c = document.getElementById("defaultCanvas0");
     const ctx = c.getContext("2d");
     ctx.beginPath();
@@ -129,7 +131,7 @@ $("#saveImage").on("click", function(event) {
       url: "/api/images",
       data: {
         name: name,
-        coordinates: JSON.stringify({ array: testArr }),
+        coordinates:  JSON.stringify(testArr) ,
         color: colorChoice
       }
     });
@@ -171,26 +173,30 @@ $("#modalOpen").on("click", function(ev) {
     //dynamically creates the buttons to be displayed with data attributes to store the data from the db
     $("#loadBtns").html("");
     for (let i = 0; i < res.length; i++) {
-      let loadBtn = $("<button>");
-      let dataCoord = JSON.parse(res[i].coordinates);
-      loadBtn.text(res[i].name);
-      loadBtn.attr("class", "toolBtn retBtn");
-      loadBtn.attr("data-coord", dataCoord.array);
-      loadBtn.attr("data-color", res[i].color);
-      $("#loadBtns").append(loadBtn);
+       let loadBtn = $("<button>");
+       let dataCoord = JSON.parse(res[i].coordinates);
+       loadBtn.text(res[i].name);
+       loadBtn.attr("class", "toolBtn retBtn");
+       loadBtn.attr("data-coord", dataCoord);
+      // loadBtn.attr("data-test", res[i].coordinates[0]);
+       loadBtn.attr("data-color", res[i].color);
+       $("#loadBtns").append(loadBtn);
     }
-    $(".retBtn").on("click", function() {
-      event.stopPropagation();
-      testArr = [];
-      colorChoice = event.target.attributes[2].nodeValue;
-      let returnData = event.target.attributes[1].nodeValue;
-      let newArrOne = returnData.split(",");
-      for (let j = 0; j < newArrOne.length; j++) {
-        testArr.push(parseFloat(newArrOne[j]));
-      }
-    });
+    
   });
 });
+
+$(document).on('click', '.retBtn', function() {
+event.stopPropagation();
+  testArr = [];
+  colorChoice = event.target.attributes[2].nodeValue;
+  let returnData = event.target.attributes[1].nodeValue;
+  let newArrOne = returnData.split(",");
+  for (let j = 0; j < newArrOne.length; j++) {
+    testArr.push(parseFloat(newArrOne[j]));
+  }
+});
+
 
 //handles color selection for the line being drawn
 $(".colorTag").on("click", function() {
