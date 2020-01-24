@@ -166,6 +166,7 @@ $("#modalOpen").on("click", function(ev) {
   //extra security on modal reset...
   $("#loadBtns").html("");
   ev.preventDefault();
+  console.log("test1")
   $.ajax({
     method: "GET",
     url: "/api/images"
@@ -173,13 +174,15 @@ $("#modalOpen").on("click", function(ev) {
     //dynamically creates the buttons to be displayed with data attributes to store the data from the db
     $("#loadBtns").html("");
     for (let i = 0; i < res.length; i++) {
-      let loadBtn = $("<button>");
-      let dataCoord = JSON.parse(res[i].coordinates);
-      loadBtn.text(res[i].name);
-      loadBtn.attr("class", "toolBtn retBtn");
-      loadBtn.attr("data-coord", dataCoord.array);
-      loadBtn.attr("data-color", res[i].color);
-      $("#loadBtns").append(loadBtn);
+      console.log("test2: " + i)
+      
+      // let loadBtn = $("<button>");
+      // let dataCoord = JSON.parse(res[i].coordinates);
+      // loadBtn.text(res[i].name);
+      // loadBtn.attr("class", "toolBtn retBtn");
+      // loadBtn.attr("data-coord", dataCoord.array);
+      // loadBtn.attr("data-color", res[i].color);
+      // $("#loadBtns").append(loadBtn);
     }
     
   });
