@@ -175,7 +175,7 @@ $("#modalOpen").on("click", function(ev) {
     $("#loadBtns").html("");
     for (let i = 0; i < res.length; i++) {
       console.log("1: " + res[i].coordinates);
-      console.log("2: " + JSON.parse(res[i].coordinates));
+      console.log("2: " + JSON.parse(res[i].coordinates.array));
        let loadBtn = $("<button>");
        //let dataCoord = JSON.parse(res[i].coordinates);
        loadBtn.text(res[i].name);
