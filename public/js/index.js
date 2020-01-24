@@ -166,7 +166,6 @@ $("#modalOpen").on("click", function(ev) {
   //extra security on modal reset...
   $("#loadBtns").html("");
   ev.preventDefault();
-  console.log("test1")
   $.ajax({
     method: "GET",
     url: "/api/images"
@@ -182,7 +181,7 @@ $("#modalOpen").on("click", function(ev) {
        loadBtn.text(res[i].name);
        loadBtn.attr("class", "toolBtn retBtn");
        loadBtn.attr("data-coord", res[i].coordinates.array);
-       loadBtn.attr("data-test", res[i].coordinates);
+       loadBtn.attr("data-test", res[i].coordinates[0]);
        loadBtn.attr("data-color", res[i].color);
        $("#loadBtns").append(loadBtn);
     }
