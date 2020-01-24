@@ -180,6 +180,11 @@ $("#modalOpen").on("click", function(ev) {
       console.log("3: " + res[i].coordinates[3]);
       console.log("4: " + res[i].coordinates[4]);
       console.log("5: " + res[i].coordinates[5]);
+      console.log("6: " + res[i].coordinates[6]);
+      console.log("7: " + res[i].coordinates[7]);
+      console.log("8: " + res[i].coordinates[8]);
+      console.log("9: " + res[i].coordinates[9]);
+      console.log("10: " + res[i].coordinates[10]);
      // console.log("2: " + JSON.parse(res[i].coordinates.array));
        let loadBtn = $("<button>");
        //let dataCoord = res[i].coordinates;
