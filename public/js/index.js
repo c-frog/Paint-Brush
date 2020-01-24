@@ -174,8 +174,9 @@ $("#modalOpen").on("click", function(ev) {
     //dynamically creates the buttons to be displayed with data attributes to store the data from the db
     $("#loadBtns").html("");
     for (let i = 0; i < res.length; i++) {
-      console.log("1: " + res[i].coordinates);
-      console.log("2: " + JSON.parse(res[i].coordinates.array));
+      console.log("1: " + res[i]);
+      console.log("2: " + res[i].coordinates);
+     // console.log("2: " + JSON.parse(res[i].coordinates.array));
        let loadBtn = $("<button>");
        //let dataCoord = JSON.parse(res[i].coordinates);
        loadBtn.text(res[i].name);
