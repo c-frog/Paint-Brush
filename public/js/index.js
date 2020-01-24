@@ -173,15 +173,20 @@ $("#modalOpen").on("click", function(ev) {
     //dynamically creates the buttons to be displayed with data attributes to store the data from the db
     $("#loadBtns").html("");
     for (let i = 0; i < res.length; i++) {
-      console.log("1: " + res[i]);
-      console.log("2: " + res[i].coordinates);
+      
+      console.log("0: " + res[i].coordinates[0]);
+      console.log("1: " + res[i].coordinates[1]);
+      console.log("2: " + res[i].coordinates[2]);
+      console.log("3: " + res[i].coordinates[3]);
+      console.log("4: " + res[i].coordinates[4]);
+      console.log("5: " + res[i].coordinates[5]);
      // console.log("2: " + JSON.parse(res[i].coordinates.array));
        let loadBtn = $("<button>");
        //let dataCoord = res[i].coordinates;
        loadBtn.text(res[i].name);
        loadBtn.attr("class", "toolBtn retBtn");
-       loadBtn.attr("data-coord", res[i].coordinates.array);
-       loadBtn.attr("data-test", res[i].coordinates[0]);
+     //  loadBtn.attr("data-coord", res[i].coordinates.array);
+      // loadBtn.attr("data-test", res[i].coordinates[0]);
        loadBtn.attr("data-color", res[i].color);
        $("#loadBtns").append(loadBtn);
     }
