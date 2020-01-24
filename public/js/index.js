@@ -131,7 +131,6 @@ $("#saveImage").on("click", function(event) {
       url: "/api/images",
       data: {
         name: name,
-        //coordinates: JSON.stringify({ array: testArr }),
         coordinates:  JSON.stringify(testArr) ,
         color: colorChoice
       }
@@ -174,20 +173,6 @@ $("#modalOpen").on("click", function(ev) {
     //dynamically creates the buttons to be displayed with data attributes to store the data from the db
     $("#loadBtns").html("");
     for (let i = 0; i < res.length; i++) {
-      console.log(res[i]);
-       console.log(res[i].coordinates);
-      // console.log("0: " + res[i].coordinates[0]);
-      // console.log("1: " + res[i].coordinates[1]);
-      // console.log("2: " + res[i].coordinates[2]);
-      // console.log("3: " + res[i].coordinates[3]);
-      // console.log("4: " + res[i].coordinates[4]);
-      // console.log("5: " + res[i].coordinates[5]);
-      // console.log("6: " + res[i].coordinates[6]);
-      // console.log("7: " + res[i].coordinates[7]);
-      // console.log("8: " + res[i].coordinates[8]);
-      // console.log("9: " + res[i].coordinates[9]);
-      // console.log("10: " + res[i].coordinates[10]);
-     // console.log("2: " + JSON.parse(res[i].coordinates.array));
        let loadBtn = $("<button>");
        let dataCoord = JSON.parse(res[i].coordinates);
        loadBtn.text(res[i].name);
@@ -211,9 +196,7 @@ event.stopPropagation();
     testArr.push(parseFloat(newArrOne[j]));
   }
 });
-// $(".retBtn").on("click", function() {
-  
-// });
+
 
 //handles color selection for the line being drawn
 $(".colorTag").on("click", function() {
