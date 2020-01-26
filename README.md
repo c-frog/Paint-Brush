@@ -1,4 +1,5 @@
 # Flint'z Skinz
+![](flintzFull.jpg)
 
 ## Overview and User Story
 
